@@ -1,5 +1,9 @@
 #include "libft.h"
 
+#ifndef BUFFER_SIZE
+# define BUFFER_SIZE 42
+#endif
+
 char *ft_strjoin_free(char *str1, const char *str2)
 {
 	char *new_string;
