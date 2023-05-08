@@ -1,31 +1,37 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_strlcpy.c                                       :+:      :+:    :+:   */
+/*   ft_atoi.c                                          :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: kmehour <kmehour@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/05/08 11:18:28 by kmehour           #+#    #+#             */
-/*   Updated: 2023/05/08 11:21:30 by kmehour          ###   ########.fr       */
+/*   Created: 2023/01/17 10:23:26 by kmehour           #+#    #+#             */
+/*   Updated: 2023/01/17 11:23:52 by kmehour          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-size_t	ft_strlcpy(char *dst, const char *src, size_t size)
+int	ft_atoi(const char *str)
 {
-	size_t	i;
+	int		signe;
+	int		i;
+	int		result;
 
 	i = 0;
-	if (!src)
+	signe = 1;
+	result = 0;
+	if (!str)
 		return (0);
-	if (!size || !dst)
-		return (ft_strlen(src));
-	while (src[i] && i < size - 1)
+	while ((*str >= 9 && *str <= 13) || *str == ' ')
+		str++;
+	if (*str == '+' || *str == '-')
+		if (*str++ == '-')
+			signe *= -1;
+	while (ft_isdigit(str[i]))
 	{
-		dst[i] = src[i];
+		result = result * 10 + (str[i] - '0');
 		i++;
 	}
-	dst[i] = '\0';
-	return (ft_strlen(src));
+	return (signe * result);
 }

@@ -1,31 +1,33 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_strlcpy.c                                       :+:      :+:    :+:   */
+/*   ft_strnstr.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: kmehour <kmehour@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/05/08 11:18:28 by kmehour           #+#    #+#             */
-/*   Updated: 2023/05/08 11:21:30 by kmehour          ###   ########.fr       */
+/*   Created: 2023/01/17 09:37:14 by kmehour           #+#    #+#             */
+/*   Updated: 2023/01/17 11:22:10 by kmehour          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-size_t	ft_strlcpy(char *dst, const char *src, size_t size)
+char	*ft_strnstr(const char *haystack, const char *needle, size_t len)
 {
-	size_t	i;
+	size_t	pin;
+	size_t	n_len;
 
-	i = 0;
-	if (!src)
-		return (0);
-	if (!size || !dst)
-		return (ft_strlen(src));
-	while (src[i] && i < size - 1)
+	pin = 0;
+	if (!needle || !haystack)
+		return (NULL);
+	n_len = ft_strlen(needle);
+	if (!*needle)
+		return ((char *)haystack);
+	while ((len - pin) >= (n_len) && haystack[pin])
 	{
-		dst[i] = src[i];
-		i++;
+		if (!ft_strncmp((haystack + pin), needle, n_len))
+			return ((char *)(haystack + pin));
+		pin++;
 	}
-	dst[i] = '\0';
-	return (ft_strlen(src));
+	return (NULL);
 }

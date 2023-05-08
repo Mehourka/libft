@@ -1,31 +1,26 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_strlcpy.c                                       :+:      :+:    :+:   */
+/*   ft_isalpha.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: kmehour <kmehour@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/05/08 11:18:28 by kmehour           #+#    #+#             */
-/*   Updated: 2023/05/08 11:21:30 by kmehour          ###   ########.fr       */
+/*   Created: 2023/01/15 15:23:59 by kmehour           #+#    #+#             */
+/*   Updated: 2023/01/15 15:33:50 by kmehour          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "libft.h"
-
-size_t	ft_strlcpy(char *dst, const char *src, size_t size)
+static int	ft_islower(int c)
 {
-	size_t	i;
+	return (c >= 'a' && c <= 'z');
+}
 
-	i = 0;
-	if (!src)
-		return (0);
-	if (!size || !dst)
-		return (ft_strlen(src));
-	while (src[i] && i < size - 1)
-	{
-		dst[i] = src[i];
-		i++;
-	}
-	dst[i] = '\0';
-	return (ft_strlen(src));
+static int	ft_isupper(int c)
+{
+	return (c >= 'A' && c <= 'Z');
+}
+
+int	ft_isalpha(int c)
+{
+	return (ft_islower(c) || ft_isupper(c));
 }
