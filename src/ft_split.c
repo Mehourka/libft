@@ -31,7 +31,7 @@ size_t	ft_wordcount(const char *s, char c)
 	return (count);
 }
 
-void	free_tab(char **tab)
+void	ft_free_tab(char **tab)
 {
 	int	i;
 
@@ -61,7 +61,7 @@ char	*ft_cpword(char *str, char **tab, char sep)
 	tab[idx] = (char *)ft_calloc(i + 1, 1);
 	if (!tab[idx])
 	{
-		free_tab(tab);
+		ft_free_tab(tab);
 		return (NULL);
 	}
 	ft_strlcpy(tab[idx], str, i + 1);

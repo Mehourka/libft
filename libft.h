@@ -85,6 +85,8 @@ long int	ft_min(long int a, long int b);
 
 char		**ft_split(char const *s, char c);
 
+void		ft_free_tab(char **tab);
+
 char		*get_next_line(int fd);
 
 #endif
