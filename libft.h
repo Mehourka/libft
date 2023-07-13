@@ -6,7 +6,7 @@
 /*   By: kmehour <kmehour@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/05/08 11:26:56 by kmehour           #+#    #+#             */
-/*   Updated: 2023/05/08 11:27:33 by kmehour          ###   ########.fr       */
+/*   Updated: 2023/07/12 21:41:36 by kmehour          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -42,6 +42,8 @@ size_t		ft_strlcat(char *dest, const char *src, size_t size);
 char		*ft_strdup(char const *s);
 
 char		*ft_strchr(const char *s, int c);
+
+int			ft_strcmp(const char *s1, const char *s2);
 
 int			ft_strncmp(const char *s1, const char *s2, size_t n);
 
