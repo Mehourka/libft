@@ -12,6 +12,9 @@
 
 #include "libft.h"
 
+/*
+	@brief  duplicates the firt n characters of a string
+ */
 char	*ft_strndup(char const *s, size_t n)
 {
 	size_t	tot_len;

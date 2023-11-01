@@ -12,6 +12,10 @@
 
 #include "libft.h"
 
+
+/*
+	@brief Converts a string to an integer
+ */
 int	ft_atoi(const char *str)
 {
 	int		signe;

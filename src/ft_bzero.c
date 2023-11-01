@@ -12,6 +12,9 @@
 
 #include "libft.h"
 
+/*
+	@brief Sets a chunk of n bytes pointed by s to zero
+ */
 void	ft_bzero(void *s, size_t n)
 {
 	ft_memset(s, 0, n);

@@ -12,6 +12,11 @@
 
 #include "libft.h"
 
+/*
+	@brief Searches for a byte of value c in the n first bytes
+
+	@return The address of the byte if found, NULL otherwise
+ */
 void	*ft_memchr(const void *str, int c, size_t n)
 {
 	size_t			i;

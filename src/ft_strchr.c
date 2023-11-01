@@ -12,6 +12,13 @@
 
 #include "libft.h"
 
+/*
+	@brief Search of char c in a char pointer
+
+	@param s The string to search
+	@param c target character
+	@return the address of first find, NULL otherwise
+*/
 char	*ft_strchr(const char *s, int c)
 {
 	unsigned int	i;

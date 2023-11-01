@@ -14,6 +14,16 @@
 #include <stdlib.h>
 #include <stdio.h>
 
+
+/*
+	@brief trims a set of characters from both ends of astring
+
+	@param s1 string to be trimmed
+	@param set the set of characters to remove
+
+	@warning creates a copy, does not free the original
+	@return A copy of the trimmed part of the string
+ */
 char	*ft_strtrim(char const *s1, char const *set)
 {
 	int		start;

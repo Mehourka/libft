@@ -12,6 +12,9 @@
 
 #include "libft.h"
 
+/*
+	@brief copy whole string with new memory allocation
+*/
 char	*ft_strdup(char const *s)
 {
 	size_t	tot_len;
